@@ -7,6 +7,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 // import { AsyncPipe } from '@angular/common';
 import { Observable } from 'rxjs';
 import { Firestore, collection, collectionData } from '@angular/fire/firestore';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 
 @Component({
   selector: 'app-root',
@@ -18,6 +20,7 @@ import { Firestore, collection, collectionData } from '@angular/fire/firestore';
     MatIconModule,
     MatNativeDateModule,
     // AsyncPipe,
+    MatProgressBarModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
