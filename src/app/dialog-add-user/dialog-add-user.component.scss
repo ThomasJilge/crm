@@ -6,3 +6,12 @@ h2 {
     margin-bottom: 0;
     padding: 20px 24px 0px 24px;
 }
+
+.buttonContainer {
+    justify-content: center;
+    gap: 16px;
+}
+
+.dialogButton:hover {
+    cursor: pointer;
+}

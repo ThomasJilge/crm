@@ -4,3 +4,13 @@
     right: 56px;
     cursor: pointer;
 }
+
+.userTable {
+    width: 100%;
+    th {
+        color: rgba(0,0,0,0.4);
+        font-size: 14px;
+        font-weight: 500;
+        text-align: start;
+    }
+}

@@ -7,6 +7,7 @@ import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.compo
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
 import { User } from '../../models/user.class';
+import {MatCardModule} from '@angular/material/card';
 
 
 @Component({
@@ -16,7 +17,8 @@ import { User } from '../../models/user.class';
     MatTooltipModule,
     MatDialogModule,
     MatNativeDateModule,
-    FormsModule
+    FormsModule,
+    MatCardModule
   ],
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss'
