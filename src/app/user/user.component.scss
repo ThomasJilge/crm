@@ -7,6 +7,30 @@
 
 .userTable {
     width: 100%;
+    border-collapse: collapse;
+    tr {
+        border-bottom: 1px solid rgba(0,0,0,0.4);
+        &:first-child {
+            cursor: none;
+            &:hover {
+                background-color: unset;
+            }
+        }
+
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        &:hover {
+            background-color: rgba(0,0,0,0.4);
+        }
+    }
+    cursor: pointer;
+
+    td {
+        height: 48px;
+    }
+
     th {
         color: rgba(0,0,0,0.4);
         font-size: 14px;
