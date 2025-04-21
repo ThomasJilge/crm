@@ -17,7 +17,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog-add-user',
-  standalone: true, // Ensure it's a standalone component
+  standalone: true, 
   imports: [
     MatDialogContent,
     MatDialogActions,
@@ -35,7 +35,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class DialogAddUserComponent {
 
-  User = new User();
+  user = new User();
   birthDate!: Date;
   loading = false;
 
@@ -43,12 +43,12 @@ export class DialogAddUserComponent {
 
 
   saveUser() {
-    this.User.birthDate = this.birthDate?.getTime();
-    console.log('Current user is', this.User);
+    this.user.birthDate = this.birthDate?.getTime();
+    console.log('Current user is', this.user);
     this.loading = true;
     const firestore = getFirestore();
 
-    addDoc(collection(firestore, 'users'), this.User.toJSON())
+    addDoc(collection(firestore, 'users'), this.user.toJSON())
       .then((result: any) => {
         this.loading = false;
         this.dialogRef.close();
