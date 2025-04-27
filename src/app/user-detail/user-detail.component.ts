@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
-import { ActivatedRoute } from '@angular/router';
+import {  MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { ActivatedRoute, RouterModule, Router } from '@angular/router';
+import { Firestore, collection, doc, docData } from '@angular/fire/firestore';
+import { inject } from '@angular/core';
+import { User } from '../../models/user.class';
 
 @Component({
   selector: 'app-user-detail',
   standalone: true,
-  imports: [MatCardModule,
-    
+  imports: [
+    MatCardModule,
+    MatDialogModule,
+    RouterModule
   ],
   templateUrl: './user-detail.component.html',
   styleUrl: './user-detail.component.scss'
@@ -14,16 +20,27 @@ import { ActivatedRoute } from '@angular/router';
 export class UserDetailComponent {
 
   userId = '';
+  user: User = new User();
+  firestore = inject(Firestore);
 
-constructor (private route: ActivatedRoute) { 
+constructor (private route: ActivatedRoute, public dialog: MatDialog, private router: Router) { 
 }
 
 ngOnInit(): void {
   this.route.paramMap.subscribe( paramMap => {
     this.userId = paramMap.get('id') || '';
-    console.log('GOT ID', this.userId)
+    console.log('GOT ID', this.userId);
+    this.getUser();
   })
-  
+}
+
+getUser() {
+  const userDocRef = doc(this.firestore, 'users', this.userId);
+  docData(userDocRef).subscribe((user: any) => {
+    this.user = new User(user);
+    console.log('Reviewed User', this.user); 
+  });
 }
 
 }
+
