@@ -5,6 +5,7 @@ import { ActivatedRoute, RouterModule, Router } from '@angular/router';
 import { Firestore, collection, doc, docData } from '@angular/fire/firestore';
 import { inject } from '@angular/core';
 import { User } from '../../models/user.class';
+import {MatIconModule} from '@angular/material/icon';
 
 @Component({
   selector: 'app-user-detail',
@@ -12,7 +13,8 @@ import { User } from '../../models/user.class';
   imports: [
     MatCardModule,
     MatDialogModule,
-    RouterModule
+    RouterModule,
+    MatIconModule
   ],
   templateUrl: './user-detail.component.html',
   styleUrl: './user-detail.component.scss'
@@ -40,6 +42,10 @@ getUser() {
     this.user = new User(user);
     console.log('Reviewed User', this.user); 
   });
+}
+
+openAddressDialog() {
+  
 }
 
 }

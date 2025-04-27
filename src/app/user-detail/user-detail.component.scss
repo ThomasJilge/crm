@@ -24,3 +24,12 @@
         margin-bottom: 0;
     }
 }
+
+.pinRightUpperCorner {
+    position: absolute;
+    right: 0;
+    top: 0;
+    &:hover {
+        cursor: pointer;
+    }
+}
