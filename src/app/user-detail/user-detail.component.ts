@@ -6,6 +6,7 @@ import { Firestore, collection, doc, docData } from '@angular/fire/firestore';
 import { inject } from '@angular/core';
 import { User } from '../../models/user.class';
 import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
 
 @Component({
   selector: 'app-user-detail',
@@ -14,7 +15,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatCardModule,
     MatDialogModule,
     RouterModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule
   ],
   templateUrl: './user-detail.component.html',
   styleUrl: './user-detail.component.scss'
@@ -44,8 +46,12 @@ getUser() {
   });
 }
 
-openAddressDialog() {
-  
+editUserDetail() {
+
+}
+
+editMenu() {
+
 }
 
 }
