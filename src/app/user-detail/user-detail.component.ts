@@ -7,6 +7,8 @@ import { inject } from '@angular/core';
 import { User } from '../../models/user.class';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
+import { DialogEditAddressComponent } from '../dialog-edit-address/dialog-edit-address.component';
+import { DialogEditUserComponent } from '../dialog-edit-user/dialog-edit-user.component';
 
 @Component({
   selector: 'app-user-detail',
@@ -47,11 +49,11 @@ getUser() {
 }
 
 editUserDetail() {
-
+  this.dialog.open(DialogEditUserComponent);
 }
 
 editMenu() {
-
+  this.dialog.open(DialogEditAddressComponent);
 }
 
 }
