@@ -9,16 +9,21 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import { DialogEditAddressComponent } from '../dialog-edit-address/dialog-edit-address.component';
 import { DialogEditUserComponent } from '../dialog-edit-user/dialog-edit-user.component';
+import { CommonModule } from '@angular/common';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-user-detail',
   standalone: true,
-  imports: [
+  imports: [CommonModule,
     MatCardModule,
     MatDialogModule,
     RouterModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   templateUrl: './user-detail.component.html',
   styleUrl: './user-detail.component.scss'
@@ -48,14 +53,16 @@ getUser() {
   });
 }
 
-editUserDetail() {
-  const dialog = this.dialog.open(DialogEditUserComponent);
-  dialog.componentInstance.user = this.user;
-}
-
 editMenu() {
   const dialog = this.dialog.open(DialogEditAddressComponent);
-  dialog.componentInstance.user = this.user;
+  dialog.componentInstance.user = new User (this.user.toJSON());
+  dialog.componentInstance.userId = this.userId;
+}
+
+editUserDetail() {
+  const dialog = this.dialog.open(DialogEditUserComponent);
+  dialog.componentInstance.user = new User (this.user.toJSON());
+  dialog.componentInstance.userId = this.userId;
 }
 
 }
