@@ -8,6 +8,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { Firestore, updateDoc, collection, doc, docData } from '@angular/fire/firestore';
 import { MatInputModule } from '@angular/material/input';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
@@ -20,7 +21,8 @@ import { MatInputModule } from '@angular/material/input';
     FormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatInputModule
+    MatInputModule, 
+    CommonModule
   ],
   templateUrl: './dialog-edit-user.component.html',
   styleUrl: './dialog-edit-user.component.scss'
@@ -45,6 +47,4 @@ export class DialogEditUserComponent {
     });
   }
   
-
-
 }
