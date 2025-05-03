@@ -19,16 +19,35 @@ export class User {
             this.customIdName = obj ? obj.customIdName : '';
     }
 
+    // public toJSON() {
+    //     return {
+    //         firstName: this.firstName,
+    //         lastName: this.lastName,
+    //         email: this.email,
+    //         birthDate: this.birthDate,
+    //         street: this.street,
+    //         zipCode: this.zipCode,
+    //         city: this.city,
+    //         customIdName: this.customIdName
+    //     };
+    // }
+
     public toJSON() {
-        return {
+        const json: any = {
             firstName: this.firstName,
             lastName: this.lastName,
             email: this.email,
             birthDate: this.birthDate,
             street: this.street,
             zipCode: this.zipCode,
-            city: this.city,
-            customIdName: this.customIdName
+            city: this.city
         };
+    
+        if (this.customIdName !== undefined) {
+            json.customIdName = this.customIdName;
+        }
+    
+        return json;
     }
+    
 }
