@@ -29,7 +29,16 @@
     position: absolute;
     right: 0;
     top: 0;
+    border: none;
     &:hover {
         cursor: pointer;
+        background-color: lightgray;
+    }
+}
+
+.buttonUser {
+    background-color: rgb(241, 171, 40);
+    &:hover {
+        background-color: rgb(244, 162, 10);
     }
 }
